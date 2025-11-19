@@ -1,0 +1,80 @@
+.add-new-task {
+  position: relative;
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+  .sections {
+    padding: 28px 14px 80px 14px;
+    border-radius: 0px 0px 26px 26px;
+    background-color: rgb(228, 196, 250);
+    .sec {
+      p {
+        color: rgb(32, 1, 38);
+        padding: 5px 0px;
+        padding-top: 15px;
+      }
+      select,
+      input {
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        width: 100%;
+        display: block;
+        color: rgb(144, 16, 144);
+      }
+    }
+  }
+}
+.input-fields {
+  width: 95%;
+  position: fixed;
+  bottom: 13%;
+  right: 0px;
+  left: 0%;
+  margin: 0px auto;
+  background-color: white;
+  border: 1px solid rgb(216, 214, 214);
+  border-radius: 28px;
+
+  input {
+    width: 70%;
+  }
+  input,
+  button {
+    padding: 14px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  button {
+    text-align: center;
+    padding: 0px;
+    position: absolute;
+    right: 2px;
+    bottom: 1%;
+    top: 2%;
+    border-radius: 28px;
+    font-size: 1.7rem;
+    background-color: rgb(228, 196, 250);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icons {
+      color: rgb(138, 3, 138);
+    }
+
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 768px) {
+  .input-fields {
+    width: 55%;
+    margin: 0px auto;
+  }
+}

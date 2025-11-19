@@ -1,0 +1,55 @@
+.get-task-container {
+  margin: 5px auto;
+  overflow-y: scroll;
+  .task-box {
+    margin: 10px auto;
+    padding: 8px 5px;
+    border-radius: 10px;
+    background-color: rgb(247, 244, 248);
+    .task-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      h2 {
+        font-weight: 500;
+        font-size: 1rem;
+      }
+      span {
+        background-color: pink;
+        padding: 4px 6px;
+        color: rgb(77, 77, 77);
+        border-radius: 14px;
+        font-size: 0.9rem;
+      }
+    }
+    .status {
+      display: flex;
+      justify-content: start;
+      gap: 10px;
+      margin: 15px 0px 0px 0px;
+
+      span {
+        text-transform: capitalize;
+        color: rgb(115, 111, 111);
+        font-size: 0.8rem;
+        background-color: rgb(255, 230, 234);
+        padding: 2px 8px;
+        border-radius: 10px;
+        &.success {
+          background-color: green;
+          color: white;
+        }
+
+        &.warning {
+          background-color: orange;
+          color: white;
+        }
+
+        &.red {
+          background-color: red;
+          color: white;
+        }
+      }
+    }
+  }
+}

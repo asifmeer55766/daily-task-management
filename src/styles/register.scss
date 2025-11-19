@@ -1,0 +1,80 @@
+.register-container {
+  background-color: rgb(228, 196, 250);
+
+  h1 {
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 400;
+    padding-top: 10px;
+    font-size: 1.5rem;
+    color: rgb(42, 41, 41);
+  }
+  form {
+    padding: 5px 25px;
+    background-color: white;
+
+    .input-fields {
+      label {
+        display: block;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 12px 0px 10px 0px;
+      }
+      input {
+        width: 100%;
+        padding: 13px;
+        outline: none;
+        border-radius: 20px;
+        font-size: 1rem;
+        border: 1px solid rgb(214, 213, 213);
+      }
+    }
+    button {
+      width: 100%;
+      padding: 13px;
+      outline: none;
+      border-radius: 20px;
+      font-size: 1rem;
+      border: 1px solid rgb(214, 213, 213);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin: 10px auto;
+      &:hover {
+        cursor: pointer;
+      }
+      .icons {
+        font-size: 1.3rem;
+      }
+    }
+    .signup {
+      color: white;
+      background-color: rgb(182, 44, 242);
+    }
+    p {
+      text-align: center;
+      margin: 22px auto;
+      color: rgb(116, 109, 109);
+    }
+  }
+}
+@media screen and (max-width: 432px) {
+  .register-container {
+    min-height: 100vh;
+    h1 {
+      padding-top: 2.5rem;
+    }
+    form {
+      margin-top: 2.5rem;
+      border-radius: 28px 28px 0px 0px;
+      padding: 25px 15px;
+      button {
+        margin: 20px auto;
+      }
+      p {
+        margin: 25px auto;
+      }
+    }
+  }
+}

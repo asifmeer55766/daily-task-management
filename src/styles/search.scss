@@ -1,0 +1,23 @@
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: white;
+
+  width: 90%;
+  margin: 0px auto;
+  border-radius: 28px;
+  padding: 0px 4px;
+  .icons {
+    font-size: 1.8rem;
+  }
+  input {
+    padding: 12px 2px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    width: 75%;
+    background: white;
+  }
+}

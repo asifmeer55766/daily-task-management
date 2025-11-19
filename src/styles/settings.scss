@@ -1,0 +1,29 @@
+.settings-container {
+  padding: 20px 14px;
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  .settings-sections {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px auto;
+    border-bottom: 1px solid rgb(213, 207, 207);
+    padding: 10px 0px 6px 0px;
+    span {
+      color: rgb(51, 49, 49);
+      font-size: 1.1rem;
+    }
+    .icons {
+      font-size: 1.3rem;
+      &:hover {
+        cursor: pointer;
+        color: violet;
+      }
+    }
+    i {
+      color: rgb(51, 49, 49);
+    }
+  }
+}
