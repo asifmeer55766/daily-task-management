@@ -1,4 +1,5 @@
 import React from "react";
+import packag from "../../package.json";
 import { CiLogout } from "react-icons/ci";
 import ThemeToggle from "../components/ThemeToggle";
 import "../styles/settings.scss";
@@ -17,7 +18,7 @@ export default function Settings() {
         </div>
         <div className="settings-sections">
           <span>Current Version</span>
-          <i>0.1.1</i>
+          <i>{packag.version}</i>
         </div>
       </div>
     </>
