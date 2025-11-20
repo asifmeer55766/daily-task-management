@@ -3,7 +3,7 @@ import packag from "../../package.json";
 import { CiLogout } from "react-icons/ci";
 import ThemeToggle from "../components/ThemeToggle";
 import "../styles/settings.scss";
-export default function Settings() {
+export default function Settings({ onLogout }) {
   return (
     <>
       <div className="settings-container">
@@ -14,7 +14,7 @@ export default function Settings() {
         </div>
         <div className="settings-sections">
           <span>Logout from your accout</span>
-          <CiLogout className="icons" />
+          <CiLogout className="icons" onClick={onLogout} />
         </div>
         <div className="settings-sections">
           <span>Current Version</span>

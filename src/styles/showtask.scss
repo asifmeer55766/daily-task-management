@@ -1,11 +1,20 @@
 .get-task-container {
   margin: 5px auto;
   overflow-y: scroll;
+
+  p {
+    color: red;
+    font-size: 1.2rem;
+    padding: 20px 0px;
+  }
   .task-box {
     margin: 10px auto;
     padding: 8px 5px;
     border-radius: 10px;
     background-color: rgb(247, 244, 248);
+    &.selectedbox {
+      background-color: rgb(240, 195, 253);
+    }
     .task-title {
       display: flex;
       justify-content: space-between;
@@ -48,6 +57,13 @@
         &.red {
           background-color: red;
           color: white;
+        }
+      }
+    }
+    .btn-group {
+      span {
+        &:hover {
+          cursor: pointer;
         }
       }
     }

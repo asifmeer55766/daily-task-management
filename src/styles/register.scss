@@ -1,5 +1,6 @@
 .register-container {
   background-color: rgb(228, 196, 250);
+  width: 100%;
 
   h1 {
     text-align: center;
@@ -61,7 +62,7 @@
 }
 @media screen and (max-width: 432px) {
   .register-container {
-    min-height: 100vh;
+    min-height: 90vh;
     h1 {
       padding-top: 2.5rem;
     }

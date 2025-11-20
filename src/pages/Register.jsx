@@ -11,7 +11,7 @@ export default function Register() {
         <h1>create an account</h1>
         <form action="">
           <div className="input-fields">
-            <label for="username">User name </label>
+            <label htmlFor="username">User name </label>
             <input
               type="text"
               name="username"
@@ -20,26 +20,24 @@ export default function Register() {
             />
           </div>
           <div className="input-fields">
-            <label for="email">Email </label>
+            <label htmlFor="email">Email </label>
             <input
               type="email"
               name="email"
-              id=""
+              id="email"
               placeholder="example@gmail.com"
             />
           </div>
           <div className="input-fields">
-            <label for="password">Password </label>
+            <label htmlFor="password">Password </label>
             <input
               type="password"
               name="password"
-              id=""
+              id="password"
               placeholder="Password"
             />
           </div>
-          <button className="signup">
-            <Loader /> Sign Up
-          </button>
+          <button className="signup">Sign Up</button>
           <div className="auth-using-another">
             <p>Or sign in with </p>
             <button>

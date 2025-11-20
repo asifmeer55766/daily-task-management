@@ -1,7 +1,8 @@
 import "./App.css";
-
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { useState, useEffect } from "react";
+
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Navigation from "./components/Navigation";
@@ -10,22 +11,101 @@ import NewTask from "./pages/NewTask";
 import Settings from "./pages/Settings";
 import Upcomming from "./pages/Upcomming";
 import NotFound from "./components/NotFound";
+import ProtectedRoute from "./components/ProtectedRoutes";
+
 function App() {
+  const [loggedin, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const user = localStorage.getItem("loggedInUser");
+    if (user) setLoggedIn(true);
+  }, []);
+
+  const handleLogin = (data) => {
+    setLoggedIn(true);
+    localStorage.setItem("loggedInUser", JSON.stringify(data));
+  };
+
+  const handleLogout = () => {
+    setLoggedIn(false);
+    localStorage.removeItem("loggedInUser");
+  };
+
   return (
     <>
       <BrowserRouter>
+        {/* Show navigation only when logged in */}
+        {<Navigation />}
+
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/new" element={<NewTask />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/upcoming" element={<Upcomming />} />
-          <Route path="/inbox" element={<NotFound />} />
+          {/* Public routes */}
+          <Route
+            path="/login"
+            element={
+              !loggedin ? (
+                <Login onLogin={handleLogin} />
+              ) : (
+                <Navigate to="/" replace />
+              )
+            }
+          />
+          <Route
+            path="/register"
+            element={!loggedin ? <Register /> : <Navigate to="/" replace />}
+          />
+
+          {/* Protected routes */}
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute isLoggedIn={loggedin}>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/new"
+            element={
+              <ProtectedRoute isLoggedIn={loggedin}>
+                <NewTask />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <ProtectedRoute isLoggedIn={loggedin}>
+                {loggedin && <Settings onLogout={handleLogout} />}
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/upcoming"
+            element={
+              <ProtectedRoute isLoggedIn={loggedin}>
+                <Upcomming />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/inbox"
+            element={
+              <ProtectedRoute isLoggedIn={loggedin}>
+                <NotFound />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Catch all unmatched routes */}
+          <Route
+            path="*"
+            element={<Navigate to={loggedin ? "/" : "/login"} replace />}
+          />
         </Routes>
-        <Navigation />
       </BrowserRouter>
-      <ToastContainer />
+
+      <ToastContainer position="top-center" autoClose={2000} />
     </>
   );
 }

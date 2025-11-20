@@ -84,7 +84,7 @@ export default function NewTask() {
           </div>
         </div>
 
-        <div className="input-fields">
+        <div className="input-field">
           <input
             type="text"
             placeholder="write task here..."
