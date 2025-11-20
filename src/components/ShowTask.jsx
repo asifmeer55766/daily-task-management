@@ -23,28 +23,24 @@ export default function ShowTask() {
             >
               <div className="task-title">
                 <h2>{task.text}</h2>
-                <span>{task.category}</span>
+                <div className="status">
+                  <span>
+                    <strong> Date</strong> {task.date}
+                  </span>
+                  <span>
+                    <strong>Category</strong> {task.category}
+                  </span>
+                  <span>
+                    <strong>Status</strong> Pending
+                  </span>
+                </div>
               </div>
-              <div className="status">
-                <span
-                  className={
-                    task.status === "overdue"
-                      ? "red"
-                      : task.status === "pending"
-                      ? "warning"
-                      : "success"
-                  }
-                >
-                  {task.status ? task.status : "pending"}
-                </span>
 
-                <span>Date {task.date}</span>
-              </div>
               {showBtn == key && (
                 <div className="status btn-group">
-                  <span className="success">mark completed</span>
-                  <span className="red">delete</span>
-                  <span className="warning">edit task </span>
+                  <span className=""> completed</span>
+                  <span className="">delete</span>
+                  <span className="">edit task </span>
                 </div>
               )}
             </div>

@@ -9,63 +9,88 @@
   }
   .task-box {
     margin: 10px auto;
-    padding: 8px 5px;
+    padding: 12px;
     border-radius: 10px;
     background-color: rgb(247, 244, 248);
     &.selectedbox {
       background-color: rgb(240, 195, 253);
     }
     .task-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
+      margin: 0px 0px 20px 0px;
       h2 {
-        font-weight: 500;
+        font-weight: 400;
         font-size: 1rem;
+        text-align: left;
+        width: 90%;
+        padding-bottom: 10px;
       }
-      span {
-        background-color: pink;
-        padding: 4px 6px;
-        color: rgb(77, 77, 77);
-        border-radius: 14px;
-        font-size: 0.9rem;
-      }
-    }
-    .status {
-      display: flex;
-      justify-content: start;
-      gap: 10px;
-      margin: 15px 0px 0px 0px;
 
-      span {
-        text-transform: capitalize;
-        color: rgb(115, 111, 111);
-        font-size: 0.8rem;
-        background-color: rgb(255, 230, 234);
-        padding: 2px 8px;
-        border-radius: 10px;
-        &.success {
-          background-color: green;
-          color: white;
-        }
+      .status {
+        display: flex;
+        // flex-direction: column;
+        gap: 4px;
+        margin: 0px;
 
-        &.warning {
-          background-color: orange;
-          color: white;
-        }
+        span {
+          border-radius: 10px;
+          color: rgb(117, 115, 112);
+          font-size: 0.6rem;
+          strong {
+            color: rgb(56, 56, 112);
+            padding: 0px 6px 0px 2px;
+          }
+          &.success {
+            background-color: green;
+            color: white;
+          }
 
-        &.red {
-          background-color: red;
-          color: white;
+          &.warning {
+            background-color: orange;
+            color: white;
+          }
+
+          &.red {
+            background-color: red;
+            color: white;
+          }
         }
       }
     }
+
     .btn-group {
       span {
+        padding: 4px 10px;
+        padding-bottom: 9px;
+        border: 0;
+        margin: 0px 10px 0px 0px;
+        font-size: 16px;
+        transition: all 150ms ease-in-out;
+        color: rgb(82, 53, 1);
+        font-weight: 400;
+        border-radius: 4px;
+        width: fit-content;
+        background: #fff;
+        box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0,
+          inset 0px -6px 0px rgba(0, 0, 0, 0.1),
+          inset 0px -2px 0px rgba(0, 0, 0, 0.15);
         &:hover {
+          filter: brightness(0.98);
           cursor: pointer;
+        }
+        &:active {
+          filter: brightness(0.97);
+          padding-top: 2px;
+          padding-bottom: 5px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0 2px 6px 0,
+            inset 0px -1px 0px rgba(0, 0, 0, 0.15);
         }
       }
     }
   }
+}
+
+.button-36 {
+}
+
+.button-36 .button-36:active {
 }

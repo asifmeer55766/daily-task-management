@@ -2,19 +2,37 @@
   padding: 14px;
   position: relative;
   min-height: 50vh;
-  background-color: rgb(221, 199, 255);
+  background-color: rgb(247, 244, 248);
   border-radius: 0px 0px 25px 25px;
+
   button {
-    padding: 8px 28px;
-    font-size: 1.1rem;
-    border: none;
-    outline: none;
+    padding: 10px 28px;
+    padding-bottom: 13px;
+    border: 0;
+    margin: 15px;
     position: absolute;
-    bottom: 10px;
-    border-radius: 26px;
-    cursor: pointer;
-    background-color: violet;
-    color: rgb(121, 3, 121);
+    bottom: 0px;
+    font-size: 16px;
+    transition: all 150ms ease-in-out;
+    color: rgb(82, 53, 1);
+    font-weight: 400;
+    border-radius: 4px;
+    width: fit-content;
+    background: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0,
+      inset 0px -6px 0px rgba(0, 0, 0, 0.1),
+      inset 0px -2px 0px rgba(0, 0, 0, 0.15);
+    &:hover {
+      filter: brightness(0.98);
+      cursor: pointer;
+    }
+    &:active {
+      filter: brightness(0.97);
+      padding-top: 2px;
+      padding-bottom: 5px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0 2px 6px 0,
+        inset 0px -1px 0px rgba(0, 0, 0, 0.15);
+    }
   }
   .loader-div {
     width: 20%;
