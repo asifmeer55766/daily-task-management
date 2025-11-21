@@ -7,7 +7,9 @@ import { useFilter } from "../context/FilterContext";
 export default function Home() {
   const { setSelectedCategory } = useFilter();
   const user = JSON.parse(localStorage.getItem("loggedInUser")).email;
+
   const name = user.split("@")[0];
+
   return (
     <div className="home-container">
       <h1>Hello, {name} </h1>

@@ -100,6 +100,29 @@ body {
         }
       }
     }
+    .register-container {
+      h1 {
+        color: white;
+      }
+      form {
+        background-color: #2f2f2f;
+        .input-fields {
+          input {
+            background-color: #2f2f2f;
+            border: 1px solid #434343;
+            color: rgb(209, 206, 206);
+          }
+        }
+        button {
+          background-color: #4b4b4b;
+          border: 1px solid #434343;
+          color: white;
+        }
+        .signup {
+          background-color: rgb(182, 44, 242);
+        }
+      }
+    }
     .upcomming-container {
       .qoutes-container {
         .qoutes-box {
@@ -114,7 +137,8 @@ body {
     .home-container,
     .upcomming-container,
     .sections,
-    .navigation-bar {
+    .navigation-bar,
+    .register-container {
       background-color: #232323;
     }
   }

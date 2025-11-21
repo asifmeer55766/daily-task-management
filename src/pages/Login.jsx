@@ -3,8 +3,10 @@ import "../styles/register.scss";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 export default function Login({ onLogin }) {
   const [login, setLoggin] = useState({});
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setLoggin((prev) => ({
@@ -12,9 +14,16 @@ export default function Login({ onLogin }) {
       [name]: value,
     }));
   };
+  const LoginAsGuest = (e) => {
+    e.preventDefault();
+    const data = { email: "Guest@gmail.com", password: "1234" };
+    setLoggin(data);
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(login);
+    if (!login) {
+      navigate("/login");
+    }
     onLogin(login);
   };
   return (
@@ -31,6 +40,7 @@ export default function Login({ onLogin }) {
               placeholder="example@gmail.com"
               onChange={handleChange}
               value={login.email}
+              required
             />
           </div>
           <div className="input-fields">
@@ -42,6 +52,7 @@ export default function Login({ onLogin }) {
               placeholder="Password"
               onChange={handleChange}
               value={login.password}
+              required
             />
           </div>
           <button className="signup" type="submit">
@@ -49,10 +60,10 @@ export default function Login({ onLogin }) {
           </button>
           <div className="auth-using-another">
             <p>------- Or sign in with -------</p>
-            <button>
+            <button onClick={LoginAsGuest}>
               <FcGoogle className="icons" /> Sign in with Google
             </button>
-            <button>
+            <button onClick={LoginAsGuest}>
               <IoLogoGithub className="icons" /> Sign in using Github
             </button>
             <p>

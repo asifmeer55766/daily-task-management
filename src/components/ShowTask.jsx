@@ -3,6 +3,7 @@ import "../styles/showtask.scss";
 import { useFilter } from "../context/FilterContext";
 import { useNavigate } from "react-router-dom";
 export default function ShowTask() {
+  const navigate = useNavigate();
   const { filteredTasks } = useFilter();
   const [highlight, setHighlight] = useState(null);
   const [showBtn, setShowBtn] = useState(null);
@@ -31,6 +32,7 @@ export default function ShowTask() {
       status: "completed",
     };
     localStorage.setItem("list", JSON.stringify(tasks));
+    window.location.reload();
   };
 
   const editTask = (key) => {
