@@ -24,6 +24,9 @@ $background: rgb(182, 44, 242);
       font-size: 0.9rem;
       margin-top: 8px;
       color: rgb(79, 79, 79);
+      user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
     }
     .nav-icons {
       font-size: 1.9rem;

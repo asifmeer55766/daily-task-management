@@ -28,7 +28,7 @@ export default function Home() {
             <span onClick={() => setSelectedCategory("important")}>
               Important
             </span>
-            <span onClick={() => setSelectedCategory("office task")}>
+            <span onClick={() => setSelectedCategory("office")}>
               Office Task
             </span>
           </div>

@@ -4,8 +4,13 @@
   align-items: center;
   flex-direction: column;
   min-height: 50ch;
+  padding: 20px;
+  text-align: center;
   h2 {
     font-size: 2rem;
     color: orangered;
+  }
+  p {
+    color: orange;
   }
 }

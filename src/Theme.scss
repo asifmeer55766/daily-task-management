@@ -1,0 +1,121 @@
+body {
+  &.light {
+  }
+  &.dark {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+
+    .sub-home-section {
+      background-color: #1a1a1a;
+    }
+    .settings-container {
+      .settings-sections {
+        span,
+        i {
+          color: rgb(134, 133, 133);
+        }
+      }
+    }
+    .sections {
+      .sec {
+        p {
+          color: rgb(163, 162, 162);
+        }
+        select,
+        input {
+          background-color: #232323;
+          border: 1px solid rgb(55, 53, 53);
+        }
+      }
+    }
+    .user-manual-container {
+      background-color: #232323;
+      h1 {
+        color: #0284cf;
+      }
+    }
+    .user-manual-sections {
+      h2 {
+        color: #0284cf;
+      }
+      p {
+        color: rgb(160, 160, 160);
+      }
+    }
+    .input-field {
+      background-color: #232323;
+      border: 1px solid rgb(55, 53, 53);
+      input {
+        color: rgb(195, 193, 193);
+      }
+      button {
+        background-color: #232323;
+        border: 1px solid rgb(55, 53, 53);
+        .icons {
+          color: white;
+        }
+      }
+    }
+    .search {
+      border: 1px solid rgb(55, 53, 53);
+      input {
+        background-color: #232323;
+        color: rgb(173, 172, 172);
+      }
+    }
+
+    .search-filter-container {
+      .filter-data {
+        .category-list {
+          background-color: #232323;
+          border: 1px solid rgb(55, 53, 53);
+          span {
+            &:hover {
+              background-color: #353535;
+            }
+          }
+        }
+      }
+    }
+    .task-box {
+      &.selectedbox {
+        background-color: rgb(8, 6, 6);
+      }
+
+      .btn-group {
+        span {
+          color: rgb(137, 137, 137);
+          background-color: #232323;
+        }
+      }
+    }
+
+    .navigation-bar {
+      box-shadow: rgba(111, 111, 111, 0.25) 0px 1px 1px,
+        rgba(111, 111, 111, 0.25) 0px 0px 1px 1px;
+      .nav-item {
+        span {
+          color: rgb(170, 169, 169);
+        }
+      }
+    }
+    .upcomming-container {
+      .qoutes-container {
+        .qoutes-box {
+          p {
+            color: rgb(7, 206, 34);
+          }
+        }
+      }
+    }
+    .task-box,
+    .search,
+    .home-container,
+    .upcomming-container,
+    .sections,
+    .navigation-bar {
+      background-color: #232323;
+    }
+  }
+}

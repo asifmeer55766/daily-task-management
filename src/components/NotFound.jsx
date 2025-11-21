@@ -5,8 +5,8 @@ export default function NotFound() {
     <>
       <div class="not-found">
         <h2>404</h2>
-        <h3>Page not Found </h3>
-        <p>it may be under development</p>
+        <h3>This features is currently not working </h3>
+        <p>Comming soon</p>
       </div>
     </>
   );

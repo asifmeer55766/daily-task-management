@@ -24,7 +24,7 @@ export default function Navigation() {
       <div className="navigation-bar">
         <div className="nav-item" onClick={() => navigatePage("home")}>
           <CiHome className="nav-icons" />
-          <span>Home</span>
+          <span disabled>Home</span>
         </div>
         <div className="nav-item" onClick={() => navigatePage("upcoming")}>
           <CiViewList className="nav-icons" />

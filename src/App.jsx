@@ -12,6 +12,7 @@ import Settings from "./pages/Settings";
 import Upcomming from "./pages/Upcomming";
 import NotFound from "./components/NotFound";
 import ProtectedRoute from "./components/ProtectedRoutes";
+import UserManual from "./pages/UserManual";
 
 function App() {
   const [loggedin, setLoggedIn] = useState(false);
@@ -72,14 +73,21 @@ function App() {
             }
           />
           <Route
-            path="/settings"
+            path="/settings/*"
             element={
               <ProtectedRoute isLoggedIn={loggedin}>
                 {loggedin && <Settings onLogout={handleLogout} />}
               </ProtectedRoute>
             }
+          ></Route>
+          <Route
+            path="user-manual"
+            element={
+              <ProtectedRoute isLoggedIn={loggedin}>
+                <UserManual />
+              </ProtectedRoute>
+            }
           />
-
           <Route
             path="/upcoming"
             element={

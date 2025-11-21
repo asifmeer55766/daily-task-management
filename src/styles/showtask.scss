@@ -40,24 +40,22 @@
             padding: 0px 6px 0px 2px;
           }
           &.success {
-            background-color: green;
-            color: white;
+            color: green;
           }
 
           &.warning {
-            background-color: orange;
-            color: white;
+            color: orange;
           }
 
           &.red {
-            background-color: red;
-            color: white;
+            color: red;
           }
         }
       }
     }
 
     .btn-group {
+      margin: 10px 0px;
       span {
         padding: 4px 10px;
         padding-bottom: 9px;
@@ -87,10 +85,4 @@
       }
     }
   }
-}
-
-.button-36 {
-}
-
-.button-36 .button-36:active {
 }

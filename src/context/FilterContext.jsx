@@ -15,7 +15,6 @@ export const FilterProvider = ({ children }) => {
     setData(stored);
   }, []);
 
-  // FILTER + SEARCH LOGIC
   const filteredTasks = data.filter((task) => {
     const matchCategory =
       selectedCategory === "all" || task.category === selectedCategory;

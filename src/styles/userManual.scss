@@ -1,0 +1,45 @@
+.user-manual-container {
+  padding: 20px;
+  margin-bottom: 70px;
+  background-color: white;
+  h1 {
+    font-size: 1.3rem;
+
+    text-transform: capitalize;
+    padding: 20px 0px;
+  }
+  .user-manual-outline {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    span {
+      margin: 3px 0px;
+      color: rgb(64, 64, 252);
+      font-size: 0.9rem;
+      text-transform: capitalize;
+      cursor: pointer;
+      &:hover {
+        color: rgb(0, 0, 185);
+      }
+    }
+  }
+  .user-manual-sections {
+    h2 {
+      font-size: 1.2rem;
+      padding: 15px 0px 5px 0px;
+      text-transform: capitalize;
+    }
+    p {
+      font-size: 0.9rem;
+      color: rgb(2, 0, 4);
+      span {
+        display: block;
+        font-weight: 600;
+        border-bottom: 1px solid black;
+        width: fit-content;
+        margin: 5px 0px;
+      }
+    }
+  }
+}

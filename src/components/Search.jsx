@@ -54,8 +54,8 @@ export default function Search({ onSearch }) {
                 Important
               </span>
               <span
-                value="office task"
-                onClick={() => setSelectedCategory("office task")}
+                value="office"
+                onClick={() => setSelectedCategory("office")}
               >
                 Office Task
               </span>

@@ -7,7 +7,8 @@
 body {
   max-width: 768px;
   margin: 0px auto;
-}
+} /* App.css */
+
 @media screen and (min-width: 768px) {
   body {
     background-color: rgb(241, 235, 235);

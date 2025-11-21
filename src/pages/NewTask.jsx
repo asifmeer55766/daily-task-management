@@ -2,12 +2,17 @@ import React, { useState, useEffect } from "react";
 import { CiLocationArrow1 } from "react-icons/ci";
 import "../styles/newtask.scss";
 import { toast } from "react-toastify";
+import { useLocation } from "react-router-dom";
 
 export default function NewTask() {
+  const location = useLocation();
+  const editKey = location.state?.key; // undefined if adding new task
+
   const [task, setTask] = useState({
     category: "",
     date: "",
     text: "",
+    status: "pending",
   });
 
   const [list, setList] = useState([]);
@@ -16,6 +21,11 @@ export default function NewTask() {
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("list")) || [];
     setList(saved);
+
+    // if editing, load existing task
+    if (editKey !== undefined) {
+      setTask(saved[editKey]);
+    }
   }, []);
 
   const handleChange = (e) => {
@@ -26,27 +36,31 @@ export default function NewTask() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // validation
     if (!task.category || !task.date || !task.text) {
       toast.error("Please fill all fields");
       return;
     }
 
-    // create new list without mutating state
-    const updatedList = [...list, task];
+    let updatedList = [...list];
+
+    if (editKey !== undefined) {
+      // update mode
+      updatedList[editKey] = task;
+      toast.success("Task Updated");
+    } else {
+      // add new task
+      updatedList.push(task);
+      toast.success("New Task Added");
+    }
 
     setList(updatedList);
-
-    // save to local storage
     localStorage.setItem("list", JSON.stringify(updatedList));
 
-    toast.success("New Task Added");
-
-    // reset form
     setTask({
       category: "",
       date: "",
       text: "",
+      status: "pending",
     });
   };
 
@@ -87,10 +101,11 @@ export default function NewTask() {
         <div className="input-field">
           <input
             type="text"
-            placeholder="write task here..."
+            placeholder="Start typing...."
             name="text"
             value={task.text}
             onChange={handleChange}
+            autoComplete="off"
           />
 
           <button type="submit">
