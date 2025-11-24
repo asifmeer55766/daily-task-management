@@ -1,6 +1,12 @@
 import React from "react";
 import "../styles/navigation.scss";
-import { CiHome, CiMail, CiSettings, CiViewList } from "react-icons/ci";
+import {
+  CiHome,
+  CiBellOn,
+  CiSettings,
+  CiViewList,
+  CiBellOff,
+} from "react-icons/ci";
 import { IoAddSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 export default function Navigation() {
@@ -11,8 +17,8 @@ export default function Navigation() {
       navigate("/");
     } else if (url === "settings") {
       navigate("/settings");
-    } else if (url === "inbox") {
-      navigate("/inbox");
+    } else if (url === "reminder") {
+      navigate("/reminder");
     } else if (url === "new") {
       navigate("/new");
     } else if (url === "upcoming") {
@@ -33,9 +39,9 @@ export default function Navigation() {
         <div className="nav-item" onClick={() => navigatePage("new")}>
           <IoAddSharp className="nav-icons circlePlus" />
         </div>
-        <div className="nav-item" onClick={() => navigatePage("inbox")}>
-          <CiMail className="nav-icons" />
-          <span>Inbox</span>
+        <div className="nav-item" onClick={() => navigatePage("reminder")}>
+          <CiBellOn className="nav-icons" />
+          <span>Reminder</span>
         </div>
         <div className="nav-item" onClick={() => navigatePage("settings")}>
           <CiSettings className="nav-icons" />

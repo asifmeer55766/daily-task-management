@@ -132,6 +132,25 @@ body {
         }
       }
     }
+    .reminder-container {
+      background-color: #232323;
+      .watch-section {
+        p {
+          background-color: #000000;
+        }
+      }
+    }
+    .reminder-messages {
+      .message-fields {
+        background-color: #232323;
+        p {
+          color: wheat;
+          &:nth-child(2) {
+            color: orangered;
+          }
+        }
+      }
+    }
     .task-box,
     .search,
     .home-container,

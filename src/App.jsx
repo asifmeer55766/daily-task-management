@@ -13,6 +13,7 @@ import Upcomming from "./pages/Upcomming";
 import NotFound from "./components/NotFound";
 import ProtectedRoute from "./components/ProtectedRoutes";
 import UserManual from "./pages/UserManual";
+import Reminder from "./pages/Reminder";
 
 function App() {
   const [loggedin, setLoggedIn] = useState(false);
@@ -97,10 +98,10 @@ function App() {
             }
           />
           <Route
-            path="/inbox"
+            path="/reminder"
             element={
               <ProtectedRoute isLoggedIn={loggedin}>
-                <NotFound />
+                <Reminder />
               </ProtectedRoute>
             }
           />
@@ -113,7 +114,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <ToastContainer position="top-center" autoClose={2000} />
+      <ToastContainer position="top-center" autoClose={1000} />
     </>
   );
 }
