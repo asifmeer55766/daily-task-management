@@ -30,6 +30,9 @@
   }
 }
 .input-field {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
   width: 95%;
   position: fixed;
   bottom: 13%;
@@ -39,19 +42,30 @@
   background-color: white;
   border: 1px solid rgb(216, 214, 214);
   border-radius: 28px;
+  display: flex;
+  align-items: flex-end;
+  // height: 7.5vh;
+  // padding: 8px 10px 8px 18px;
 
-  input {
-    width: 100%;
-    border-radius: 25px;
-    background-color: transparent;
-    padding-right: 20px;
+  textarea {
+    width: 90%;
+
+    // background-color: red;
+    padding: 28px;
+    resize: none;
+    overflow-y: auto;
+    max-height: 12em;
+    // min-height: 1.5em;
+    height: 7.5vh;
+    color: black;
+
     &:focus {
       background-color: none; /* Or your desired color */
     }
   }
-  input,
+  textarea,
   button {
-    padding: 14px;
+    // padding: 14px;
     font-size: 1rem;
     border: none;
     outline: none;
@@ -61,9 +75,9 @@
     text-align: center;
     padding: 0px;
     position: absolute;
-    right: 2px;
-    bottom: 1%;
-    top: 2%;
+    right: 1%;
+    bottom: 10%;
+    flex-shrink: 0;
     border-radius: 28px;
     font-size: 1.7rem;
     background-color: rgb(228, 196, 250);
@@ -79,16 +93,18 @@
     cursor: pointer;
   }
 }
+
 @media screen and (min-width: 768px) {
-  .input-fields {
-    width: 55%;
+  .input-field {
+    width: 56%;
     margin: 0px auto;
   }
 }
 @media screen and (max-width: 432px) {
-  .input-fields {
-    input {
-      width: 95%;
+  .input-field {
+    textarea {
+      padding: 18px 24px;
+      width: 90%;
     }
   }
 }

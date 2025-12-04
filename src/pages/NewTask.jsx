@@ -3,10 +3,13 @@ import { CiLocationArrow1 } from "react-icons/ci";
 import "../styles/newtask.scss";
 import { toast } from "react-toastify";
 import { useLocation } from "react-router-dom";
+import { useFilter } from "../context/FilterContext";
 
 export default function NewTask() {
   const location = useLocation();
-  const editKey = location.state?.key; // undefined if adding new task
+  const editKey = location.state?.key;
+
+  const { setData } = useFilter();
 
   const [task, setTask] = useState({
     category: "",
@@ -17,12 +20,10 @@ export default function NewTask() {
 
   const [list, setList] = useState([]);
 
-  // Load previous tasks once
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("list")) || [];
     setList(saved);
 
-    // if editing, load existing task
     if (editKey !== undefined) {
       setTask(saved[editKey]);
     }
@@ -31,6 +32,12 @@ export default function NewTask() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setTask((prev) => ({ ...prev, [name]: value }));
+
+    const textarea = e.target;
+
+    textarea.style.height = "auto";
+
+    textarea.style.height = `${textarea.scrollHeight}px`;
   };
 
   const handleSubmit = (e) => {
@@ -44,11 +51,9 @@ export default function NewTask() {
     let updatedList = [...list];
 
     if (editKey !== undefined) {
-      // update mode
       updatedList[editKey] = task;
       toast.success("Task Updated");
     } else {
-      // add new task
       updatedList.push(task);
       toast.success("New Task Added");
     }
@@ -56,6 +61,9 @@ export default function NewTask() {
     setList(updatedList);
     localStorage.setItem("list", JSON.stringify(updatedList));
 
+    setData(updatedList);
+
+    // Reset fields
     setTask({
       category: "",
       date: "",
@@ -99,14 +107,14 @@ export default function NewTask() {
         </div>
 
         <div className="input-field">
-          <input
+          <textarea
             type="text"
             placeholder="Start typing...."
             name="text"
             value={task.text}
             onChange={handleChange}
             autoComplete="off"
-          />
+          ></textarea>
 
           <button type="submit">
             <CiLocationArrow1 className="icons" />

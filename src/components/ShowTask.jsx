@@ -4,7 +4,7 @@ import { useFilter } from "../context/FilterContext";
 import { useNavigate } from "react-router-dom";
 export default function ShowTask() {
   const navigate = useNavigate();
-  const { filteredTasks } = useFilter();
+  const { filteredTasks, setData } = useFilter();
   const [highlight, setHighlight] = useState(null);
   const [showBtn, setShowBtn] = useState(null);
   const today = new Date();
@@ -22,7 +22,7 @@ export default function ShowTask() {
     const tasks = JSON.parse(localStorage.getItem("list")) || [];
     const updatedTasks = tasks.filter((item, index) => index !== key);
     localStorage.setItem("list", JSON.stringify(updatedTasks));
-    window.location.reload();
+    setData(updatedTasks);
   };
 
   const completedTask = (key) => {
@@ -32,7 +32,7 @@ export default function ShowTask() {
       status: "completed",
     };
     localStorage.setItem("list", JSON.stringify(tasks));
-    window.location.reload();
+    setData(tasks);
   };
 
   const editTask = (key) => {

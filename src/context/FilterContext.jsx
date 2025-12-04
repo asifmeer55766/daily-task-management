@@ -14,6 +14,9 @@ export const FilterProvider = ({ children }) => {
     const stored = JSON.parse(localStorage.getItem("list")) || [];
     setData(stored);
   }, []);
+  // useEffect(() => {
+  //   filteredTasks();
+  // }, []);
 
   const filteredTasks = data.filter((task) => {
     const matchCategory =

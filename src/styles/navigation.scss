@@ -42,4 +42,12 @@ $background: rgb(182, 44, 242);
       margin-bottom: 10px;
     }
   }
+  .active {
+    font-weight: bold;
+    color: rgb(255, 0, 255);
+    span {
+      font-weight: bold;
+      color: rgb(255, 0, 255);
+    }
+  }
 }
